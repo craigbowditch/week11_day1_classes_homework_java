@@ -32,7 +32,7 @@ public class CalculatorTest {
 
     @Test
     public void canDivide(){
-        int result = calculator.divide(6,2);
-        assertEquals(3, result);
+        double result = calculator.divide(3,2);
+        assertEquals(1.5, result, 0.1);
     }
 }

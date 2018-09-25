@@ -1,25 +1,25 @@
 public class Printer {
-    private int paper;
+    private int paperCount;
     private int toner;
 
-    public Printer(int paper, int toner) {
-        this.paper = paper;
+    public Printer(int paperCount, int toner) {
+        this.paperCount = paperCount;
         this.toner = toner;
     }
 
     public int getPaper() {
-        return this.paper;
+        return this.paperCount;
     }
 
     public void print(int copies, int pages) {
-        int paper = copies * pages;
-        if (this.paper > paper) {
-            this.paper -= paper;
-            this.toner -= paper;
+        int totalCopies = copies * pages;
+        if (this.paperCount >= totalCopies) {
+            this.paperCount -= totalCopies;
+            this.toner -= totalCopies;
         }
     }
     public void refillPaper(int sheet){
-      this.paper += sheet;
+      this.paperCount += sheet;
     }
 
     public int getToner(){
